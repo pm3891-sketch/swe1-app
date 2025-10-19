@@ -1,0 +1,33 @@
+language: python
+python:
+  - "3.12"
+
+install:
+  - pip install --upgrade pip
+  - pip install -r requirements.txt
+
+env:
+  global:
+    - EB_REGION=us-east-2
+    - EB_APP=swe1-app
+    - EB_ENV=Swe1-app-env
+    - EB_S3_BUCKET=elasticbeanstalk-us-east-2-248189932188
+
+script:
+  - black --check .
+  - flake8 .
+  - coverage run manage.py test
+
+after_success:
+  - coveralls
+
+deploy:
+  provider: elasticbeanstalk
+  region: $EB_REGION
+  app: $EB_APP
+  env: $EB_ENV
+  bucket_name: $EB_S3_BUCKET
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  on:
+    branch: main
