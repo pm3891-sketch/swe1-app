@@ -94,7 +94,6 @@ AUTH_PASSWORD_VALIDATORS = [
         ),
 =======
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
->>>>>>> 554e471 (Format all files with black)
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
@@ -130,7 +129,4 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-<<<<<<< HEAD
-=======
->>>>>>>
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
