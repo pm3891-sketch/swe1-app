@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-import os  # ✅ moved to top (fixes E402)
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,10 +87,14 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
+<<<<<<< HEAD
         "NAME": (
             "django.contrib.auth.password_validation."
             "UserAttributeSimilarityValidator"
         ),
+=======
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+>>>>>>> 554e471 (Format all files with black)
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
@@ -126,4 +130,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+<<<<<<< HEAD
+=======
+>>>>>>>
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
