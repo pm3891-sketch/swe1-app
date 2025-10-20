@@ -12,17 +12,6 @@ script:
   - flake8 .
   - coverage run manage.py test
 
-deploy:
-  provider: elasticbeanstalk
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  region: "us-east-2"
-  app: "swe1-app"
-  env: "swe1-app-env"
-  bucket_name: "elasticbeanstalk-us-east-2-248189932188"
-  on:
-    branch: main
-
 env:
   global:
     - EB_REGION=us-east-2
